@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+get "/hero/list", to: "hero#list"
+
+get "/item/list", to: "item#list"
+
 end
