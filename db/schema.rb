@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_22_123403) do
+ActiveRecord::Schema.define(version: 2021_04_22_143821) do
 
   create_table "heros", force: :cascade do |t|
     t.string "name"
@@ -27,6 +27,9 @@ ActiveRecord::Schema.define(version: 2021_04_22_123403) do
     t.integer "defence_modifier"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "hero_id"
+    t.index ["hero_id"], name: "index_items_on_hero_id"
   end
 
+  add_foreign_key "items", "heros"
 end
